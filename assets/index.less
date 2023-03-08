@@ -1,0 +1,558 @@
+@import 'ant-design-vue/dist/antd.less';
+
+@primary-color: #1f5fff;
+@link-color   : #1f5fff;
+@info-color   : #00c8ff;
+@success-color: #30c080;
+@warning-color: #ff8030;
+@error-color  : #ff3030;
+
+html {
+    font-family: sans-serif;
+}
+
+body {
+    overflow   : overlay;
+    font-family: "Barlow", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif !important;
+}
+
+#qLayout {
+
+    // 主题调整-黑色 
+    .ant-layout-sider-dark {
+        background: #2c3040;
+
+        .deo-menu {
+            .ant-menu {
+                background: #2c3040;
+                box-shadow: none;
+            }
+
+            .ant-menu-submenu-title,
+            .ant-menu-item {
+                &:hover {
+                    .ant-menu-title-content {
+                        span {
+                            color: #ffffff;
+                        }
+
+                        i {
+                            color: #ffffff;
+                        }
+                    }
+                }
+            }
+
+
+            .ant-menu-submenu-selected>.ant-menu-submenu-title span,
+            .ant-menu-item.ant-menu-item-selected span {
+                color: #ffffff;
+
+                i {
+                    color: #ffffff;
+                }
+            }
+
+            i {
+                color: #6c7080;
+            }
+
+            .ant-menu-submenu-title span,
+            .ant-menu-item span {
+                color: #888c95;
+            }
+        }
+    }
+
+    .ant-layout-dark {
+        background: #2c3040;
+        height    : 100vh;
+        overflow  : auto;
+
+        .layoutHeader {
+            background: transparent;
+            color     : #6c7080;
+
+            .layoutHeader-more i {
+                cursor: pointer;
+
+                &:hover {
+                    color: #ffffff;
+                }
+            }
+
+            .layoutHeader-box {
+                background: #2c3040;
+            }
+
+            .ant-badge {
+                color: rgba(255, 255, 255, 0.65);
+            }
+
+            .ant-dropdown-open {
+                color: #ffffff;
+
+                i {
+                    color: #ffffff;
+
+                }
+            }
+
+            .trigger:hover {
+                color: #ffffff;
+
+                i {
+                    color: #ffffff;
+                }
+            }
+        }
+
+        .ant-layout-content {
+            margin-top: 0;
+        }
+
+        .qlContent {
+            box-shadow: 0 0 12px #1e202c;
+        }
+    }
+
+    // 主题调整-黑色 end
+
+
+    // 主题调整-白色
+    .ant-layout-sider-light {
+
+        .deo-menu {
+            border-color: #ffffff;
+        }
+
+    }
+
+    .ant-layout-light {
+        height  : 100vh;
+        overflow: auto;
+
+        .layoutHeader {
+            background-color: #ffffff;
+        }
+    }
+
+    // 主题调整-白色end
+
+
+
+    // 主题调整-灰色
+    .ant-layout-sider-gray {
+        background: #f8f8fa;
+
+        .deo-menu {
+            border-color: #f8f8fa;
+            background  : #f8f8fa;
+
+            .ant-menu {
+                background: #f8f8fa;
+            }
+
+            .ant-menu-title-content span {
+                color: #586070;
+            }
+
+            .ant-menu-submenu-title,
+            .ant-menu-item {
+                &:hover {
+                    .ant-menu-title-content {
+                        span {
+                            color: @primary-color;
+                        }
+
+                        i {
+                            color: @primary-color;
+                        }
+                    }
+                }
+            }
+
+            .ant-menu-item.ant-menu-item-selected {
+                .ant-menu-title-content {
+                    span {
+                        color: #ffffff;
+                    }
+
+                    i {
+                        color: #ffffff;
+                    }
+                }
+
+            }
+
+            i {
+                color: #a0a0a8;
+            }
+        }
+    }
+
+
+    .ant-layout-gray {
+        background: #f8f8fa;
+        height    : 100vh;
+        overflow  : auto;
+
+        .layoutHeader {
+            background-color: transparent;
+            color           : #a0a0a8;
+
+            .layoutHeader-box {
+                background: #f8f8fa;
+            }
+
+            .ant-dropdown-open {
+                color: @primary-color;
+
+                i {
+                    color: @primary-color;
+
+                }
+            }
+
+            .trigger:hover {
+                color: @primary-color;
+            }
+
+            .layoutHeader-left {
+                color: #6c7080;
+            }
+        }
+
+        .ant-layout-content {
+            margin-top: 0;
+        }
+
+        .qlContent {
+            box-shadow: 0 0 12px #e0e0e8;
+        }
+    }
+
+    // 主题调整-灰色  end
+
+
+
+    // 主题以外
+    .logo {
+        position   : absolute;
+        width      : 100%;
+        height     : 64px;
+        line-height: 64px;
+        text-align : center;
+        z-index    : 10;
+    }
+
+    .layoutHeader {
+        height       : 50px;
+        line-height  : 50px;
+        padding      : 0;
+        margin-bottom: 6px;
+
+        .layoutHeader-more {
+            display      : none;
+            text-align   : right;
+            padding-right: 10px;
+        }
+
+        .trigger {
+            padding   : 0 20px;
+            cursor    : pointer;
+            transition: color 0.3s;
+        }
+
+        .trigger:hover {
+            color: @primary-color;
+        }
+
+        i {
+            color: #6c7080;
+
+            &:hover {
+                color: @primary-color;
+            }
+        }
+    }
+
+    .layoutContent {
+        margin    : 24px 16px;
+        padding   : 0;
+        min-height: 280px;
+    }
+
+    .deo-menu {
+        padding-top: 50px;
+        height     : 100vh;
+        overflow-y : overlay;
+
+        &::-webkit-scrollbar {
+            width : 0;
+            height: 0;
+        }
+
+        .ant-menu-item {
+            height     : 48px;
+            line-height: 48px;
+            margin     : 0;
+
+            .ant-menu-item-icon {
+                font-size: 16px;
+            }
+        }
+
+        i.iconfont {
+            font-size: 16px;
+        }
+    }
+
+
+}
+
+// header的伸缩 
+@media (max-width: 768px) {
+    #qLayout {
+        .layoutHeader {
+            position: relative;
+
+            .layoutHeader-more {
+                display: block;
+            }
+
+            .layoutHeader-box {
+                position    : absolute;
+                top         : 50px;
+                left        : 0;
+                width       : 100%;
+                z-index     : 10;
+                padding-left: 10px;
+
+                &.flexBox {
+                    display: block;
+                }
+
+            }
+
+            .layoutHeader-right {
+                .ant-space {
+                    flex-direction: column-reverse;
+                    gap           : 0px !important;
+                }
+            }
+        }
+
+    }
+
+    .systemSwitch {
+        width     : auto;
+        max-height: 300px;
+        overflow  : auto;
+        padding   : 4px 10px;
+
+        .systemSwitch-item {
+            float: none;
+        }
+    }
+}
+
+// 根据框架情况调整css
+
+// 菜单处理
+
+.ant-menu-inline.ant-menu-root .ant-menu-item,
+.ant-menu-inline.ant-menu-root .ant-menu-submenu-title,
+.ant-menu-vertical .ant-menu-item::after,
+.ant-menu-vertical-left .ant-menu-item::after,
+.ant-menu-vertical-right .ant-menu-item::after,
+.ant-menu-inline .ant-menu-item::after {
+    transition: none
+}
+
+.ant-menu-item-selected {
+    border-radius: 40px;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: @primary-color;
+    color           : #ffffff;
+}
+
+.ant-menu-item-active {
+    color: @primary-color;
+}
+
+.menuItem {
+    .iconMore {
+        display: none;
+    }
+
+    &.ant-menu-item-active {
+        i {
+            display: inline-block;
+
+        }
+    }
+}
+
+
+.ant-menu-inline,
+.ant-menu-vertical,
+.ant-menu-vertical-left {
+    border-right: 0 none;
+}
+
+// 缩小菜单样式
+.menuCollapsed {
+    .menuCollapsed-item {
+        height     : 44.02px;
+        line-height: 44.02px;
+
+        i {
+            font-size: 16px;
+        }
+    }
+
+    &>.menuCollapsed-item {
+        text-align: center;
+    }
+
+
+}
+
+.menuCollapsed-menu {
+    width: 220px;
+
+
+
+    .menuCollapsed-menuTitle {
+        font-weight  : bold;
+        padding      : 0 0 5px 16px;
+        line-height  : 34px;
+        border-bottom: 1px solid #edeef0;
+    }
+
+    .menuCollapsed-item,
+    .menuCollapsed-menuItem {
+        position   : relative;
+        padding    : 7px 16px;
+        line-height: 34px;
+        cursor     : pointer;
+        transition : background-color .2s ease-in-out;
+
+        .iconMore {
+            position: absolute;
+            right   : 20px;
+            top     : 6px;
+            margin  : 0;
+            display : none;
+        }
+
+        &:hover {
+            color           : #ffffff;
+            background-color: @primary-color;
+
+            .iconMore {
+                display: inline;
+            }
+        }
+    }
+}
+
+// 菜单处理  end
+
+// 表格相关处理
+.tableFormHead {
+    .ant-form-item {
+        margin-bottom: 10px;
+    }
+}
+
+.tableFormItem {
+    margin: 0;
+
+    .ant-form-item-explain {
+        display: none;
+    }
+}
+
+// 表格相关处理 end
+
+
+
+
+// 根据框架情况调整css  end
+
+
+// flex
+.flexBox {
+    display: flex;
+
+    .flexAuto {
+        flex: auto;
+    }
+}
+
+// flex end
+
+// 布局
+.qlForm {
+    .ant-picker {
+        width: 100%;
+    }
+}
+
+.qlContent {
+    border-radius: 10px;
+    background   : #ffffff;
+    box-shadow   : 0 0 12px #1e202c;
+
+    .qlContent-head {
+        border-bottom: solid 1px #e0e0e8;
+        padding      : 0 16px;
+        height       : 46px;
+        line-height  : 46px;
+
+        .ant-breadcrumb {
+            font-size  : 16px;
+            height     : 46px;
+            line-height: 46px;
+
+            &>span:last-child {
+                font-weight: 700;
+                color      : #515a6e;
+            }
+        }
+    }
+
+    .qlContent-body {
+        padding: 10px 16px;
+    }
+
+    .ant-descriptions-view {
+        .describe-key {
+            color: #6c7080;
+        }
+    }
+
+    &.ant-collapse {
+        overflow: hidden;
+    }
+
+    .ant-breadcrumb-separator {
+        color: #dcdee2;
+    }
+}
+
+.qlContent-tabsHeader {
+    position: relative;
+    top     : -46px;
+
+    .ant-tabs-nav {
+        margin-left : 16px;
+        margin-right: 16px;
+    }
+}
+
+// 提供一些布局
