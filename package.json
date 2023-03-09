@@ -1,6 +1,11 @@
 {
   "name": "andvxs",
   "version": "0.1.0",
+  "author": {
+    "name": "lm",
+    "email": "315636938@qq.com",
+    "url": "https://github.com/lm356536/andvxs.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -27,11 +32,11 @@
     "vuex": "4.0.2",
     "vuex-persistedstate": "4.1.0"
   },
-  "author": "lm356536",
   "repository": {
     "type": "git",
     "url": "https://github.com/lm356536/andvxs.git"
   },
+  "license": "MIT",
   "volta": {
     "node": "19.2.0"
   }
