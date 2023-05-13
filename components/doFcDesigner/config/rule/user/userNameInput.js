@@ -1,7 +1,7 @@
 import uniqueId from '@form-create/utils/lib/unique';
 
-const label = '单行文本';
-const name = 'extraInput';
+const label = '姓名';
+const name = 'userNameInput';
 
 export default {
     icon: 'icon-input',
@@ -12,7 +12,19 @@ export default {
             type: 'input',
             field: uniqueId(),
             title: label,
-            props: {type: "text"}
+            props: {type: "text"},
+            temple_code: 'userName',
+            validate: [
+                {
+                  "trigger": "change",
+                  "mode": "pattern",
+                  "message": "请输入正确的姓名",
+                  "pattern": "^(?:[\\u4e00-\\u9fa5·]{2,16})$",
+                  "type": "string"
+                }
+              ],
+              "$required": "姓名信息不能空"
+          
         };
     },
     props() {

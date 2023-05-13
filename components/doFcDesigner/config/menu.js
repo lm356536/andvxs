@@ -31,35 +31,68 @@ import group from './rule/group';
 import table from './rule/table';
 
 import extraInput from './rule/extra/extraInput'
+import extraArea from './rule/extra/extraArea'
+import extraRadio from './rule/extra/extraRadio'
+import extraCheckbox from './rule/extra/extraCheckbox'
+import extraUploadFile from './rule/extra/extraUploadFile'
+import extraUploadImg from './rule/extra/extraUploadImg'
 
+import userNameInput from './rule/user/userNameInput'
+import sexRadio from './rule/user/sexRadio'
+import ageInput from './rule/user/ageInput'
+import phoneInput from './rule/user/phoneInput'
+import callInput from './rule/user/callInput'
+import mailInput from './rule/user/mailInput'
+import idCardInput from './rule/user/idCardInput'
 export default function createMenu() {
     return [
         {
             name: 'main',
-            title: '表单组件',
+            title: '基础字段',
             list: [
                 extraInput,
-                input, inputPassword, inputTextArea,
-                number, radio, checkbox,
-                date, dateRangePicker, select,
-                time, timeRangePicker, _switch,
-                slider, rate, cascader,
-                transfer, tree, hidden
+                extraArea,
+                extraRadio,
+                extraCheckbox,
+                extraUploadFile,
+                extraUploadImg
             ]
+            // list: [
+            //     extraInput,
+            //     input, inputPassword, inputTextArea,
+            //     number, radio, checkbox,
+            //     date, dateRangePicker, select,
+            //     time, timeRangePicker, _switch,
+            //     slider, rate, cascader,
+            //     transfer, tree, hidden
+            // ]
         },
         {
-            name: 'aide',
-            title: '辅助组件',
+            name: 'main',
+            title: '常用字段',
             list: [
-                alert, button, span, divider, progress
+                userNameInput,
+                sexRadio,
+                ageInput,
+                phoneInput,
+                callInput,
+                mailInput,
+                idCardInput
             ]
         },
-        {
-            name: 'layout',
-            title: '布局组件',
-            list: [
-                row, space, group, table, card, tab
-            ]
-        },
+        // {
+        //     name: 'aide',
+        //     title: '辅助组件',
+        //     list: [
+        //         alert, button, span, divider, progress
+        //     ]
+        // },
+        // {
+        //     name: 'layout',
+        //     title: '布局组件',
+        //     list: [
+        //         row, space, group, table, card, tab
+        //     ]
+        // },
     ];
 }

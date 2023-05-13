@@ -1,7 +1,7 @@
 import uniqueId from '@form-create/utils/lib/unique';
 
-const label = '单行文本';
-const name = 'extraInput';
+const label = '手机号码';
+const name = 'phoneInput';
 
 export default {
     icon: 'icon-input',
@@ -12,7 +12,19 @@ export default {
             type: 'input',
             field: uniqueId(),
             title: label,
-            props: {type: "text"}
+            props: {type: "text"},
+            temple_code: 'phoneInput',
+            validate: [
+                {
+                  "trigger": "change",
+                  "mode": "pattern",
+                  "message": "请输入正确的手机号码",
+                  "pattern": "^(?:(?:\+|00)86)?1[3-9]\d{9}$",
+                  "type": "string"
+                }
+              ],
+              "$required": "手机号码不能为空"
+          
         };
     },
     props() {

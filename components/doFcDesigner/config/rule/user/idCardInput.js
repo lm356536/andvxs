@@ -1,7 +1,7 @@
 import uniqueId from '@form-create/utils/lib/unique';
 
-const label = '单行文本';
-const name = 'extraInput';
+const label = '身份证';
+const name = 'idCardInput';
 
 export default {
     icon: 'icon-input',
@@ -12,7 +12,19 @@ export default {
             type: 'input',
             field: uniqueId(),
             title: label,
-            props: {type: "text"}
+            props: {type: "text"},
+            temple_code: 'idCardInput',
+            validate: [
+                {
+                  "trigger": "change",
+                  "mode": "pattern",
+                  "message": "请输入正确的身份证信息",
+                  "pattern": "^[1-9]\d{5}(?:18|19|20)\d{2}(?:0[1-9]|10|11|12)(?:0[1-9]|[1-2]\d|30|31)\d{3}[\dXx]$",
+                  "type": "string"
+                }
+              ],
+              "$required": "身份证信息不能为空"
+          
         };
     },
     props() {

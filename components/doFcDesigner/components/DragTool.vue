@@ -4,7 +4,7 @@
       <div
         class="drag-btn _fc-drag-btn"
         v-if="state.active === id && dragBtn !== false"
-        style="cursor: move;"
+        style="cursor: move"
       >
         <i class="fc-icon icon-move"></i>
       </div>
@@ -28,8 +28,8 @@
   </div>
 </template>
 
-<script>
-import { defineComponent, ref, toRefs, inject, onBeforeUnmount } from 'vue'
+<script scoped>
+import { defineComponent, ref, toRefs, inject, onBeforeUnmount } from 'vue';
 
 let cid = 1;
 export default defineComponent({
@@ -49,13 +49,13 @@ export default defineComponent({
 
     onBeforeUnmount(() => {
       state.value = {};
-    })
+    });
 
     return {
       id,
       state,
       active,
-    }
+    };
   },
 });
 </script>

@@ -32,9 +32,36 @@ import editor from './editor';
 import progress from './progress';
 import hidden from './hidden';
 import extraInput from './extra/extraInput'
+import extraArea from './extra/extraArea'
+import extraRadio from './extra/extraRadio'
+import extraCheckbox from './extra/extraCheckbox'
+import extraUploadFile from './extra/extraUploadFile';
+import extraUploadImg from './extra/extraUploadImg';
+import userNameInput from './user/userNameInput'
+import idCardInput from './user/idCardInput';
+import ageInput from './user/ageInput';
+import callInput from './user/callInput';
+import mailInput from './user/mailInput';
+import phoneInput from './user/phoneInput';
+import sexRadio from './user/sexRadio';
 
 const ruleList = {
+
     [extraInput.name]: extraInput,
+    [extraArea.name]: extraArea,
+    [extraRadio.name]: extraRadio,
+    [extraCheckbox.name]: extraCheckbox,
+    [extraInput.name]: extraInput,
+    [extraUploadFile.name]: extraUploadFile,
+    [extraUploadImg.name]:extraUploadImg, 
+    [userNameInput.name]: userNameInput,
+    [idCardInput.name]: idCardInput,
+    [ageInput.name]: ageInput,
+    [callInput.name]: callInput,
+    [mailInput.name]: mailInput,
+    [phoneInput.name]: phoneInput,
+    [sexRadio.name]: sexRadio,
+    
     [radio.name]: radio,
     [checkbox.name]: checkbox,
     [input.name]: input,

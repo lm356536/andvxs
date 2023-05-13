@@ -1,18 +1,25 @@
 import uniqueId from '@form-create/utils/lib/unique';
 
-const label = '单行文本';
-const name = 'extraInput';
+const label = '性别';
+const name = 'sexRadio';
 
 export default {
-    icon: 'icon-input',
+    icon: 'icon-radio',
     label,
     name,
     rule() {
         return {
-            type: 'input',
+            type: 'radio',
             field: uniqueId(),
             title: label,
-            props: {type: "text"}
+            props: {type: "text"},
+            temple_code: 'sexRadio',
+            $required: "性别不能为空",
+            options: [
+                { value: '1', label: '男' },
+                { value: '2', label: '女' },
+            ]
+          
         };
     },
     props() {
