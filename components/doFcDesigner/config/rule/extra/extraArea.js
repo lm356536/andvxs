@@ -1,7 +1,7 @@
 import uniqueId from '@form-create/utils/lib/unique';
 
-const label = '单行文本';
-const name = 'extraInput';
+const label = '多行文本';
+const name = 'extraArea';
 
 export default {
     icon: 'icon-input',
@@ -12,7 +12,7 @@ export default {
             type: 'input',
             field: uniqueId(),
             title: label,
-            props: {type: "text"}
+            props: {type: "textarea"}
         };
     },
     props() {

@@ -16,7 +16,7 @@ import xxx from "andvxs/xxx";
 ```
 
 如需把组件全局引入请自行在main.js处理
-```
+``` 
 import { createApp } from 'vue'
 import DoTable from "andvx/components/doTable";
 ...
