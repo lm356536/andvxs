@@ -36,6 +36,10 @@ import extraRadio from './rule/extra/extraRadio'
 import extraCheckbox from './rule/extra/extraCheckbox'
 import extraUploadFile from './rule/extra/extraUploadFile'
 import extraUploadImg from './rule/extra/extraUploadImg'
+import extraMutipleSelect from './rule/extra/extraMutipleSelect';
+import extraSelect from './rule/extra/extraSelect';
+import extraRate from './rule/extra/extraRate';
+import extraDatePicker from './rule/extra/extraDatePicker'
 
 import userNameInput from './rule/user/userNameInput'
 import sexRadio from './rule/user/sexRadio'
@@ -54,8 +58,13 @@ export default function createMenu() {
                 extraArea,
                 extraRadio,
                 extraCheckbox,
+                extraSelect,
+                extraMutipleSelect,
                 extraUploadFile,
-                extraUploadImg
+                extraUploadImg,
+                extraRate,
+                extraDatePicker
+        
             ]
             // list: [
             //     extraInput,

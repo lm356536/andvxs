@@ -17,7 +17,8 @@ export default {
                 action: '',
                 onSuccess(res, file) {
                     file.url = res.data.url;
-                }
+                },
+                uploadType: 'image'
             }
         };
     },
