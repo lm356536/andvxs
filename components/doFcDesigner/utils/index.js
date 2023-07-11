@@ -71,6 +71,70 @@ export function makeOptionsRule( to, flag) {
         control
     };
 }
+/**
+ * 设置组件静态选项rule
+ */
+export function makeStaticOptionsRule( to, flag) {
+    const options = [
+        {'label': 'JSON数据', 'value': 0},
+        {'label': '接口数据', 'value': 1},
+    ];
+
+    const control = [
+        {
+            value: 0,
+            rule: [
+                {
+                    type: 'Struct',
+                    field: 'formCreate' + upper(to).replace('.', '>'),
+                    props: {defaultValue: []}
+                },
+            ],
+        },
+        {
+            value: 1,
+            rule: [
+                {
+                    type: 'Fetch',
+                    field: 'formCreateEffect>fetch',
+                    props: {
+                        to
+                    }
+                }
+            ]
+        }
+    ];
+
+    if (flag !== false) {
+        options.splice(0, 0, {'label': '静态数据', 'value': 2});
+        control.push({
+            value: 2,
+            rule: [
+                {
+                    type: 'TableOptions',
+                    field: 'formCreate' + upper(to).replace('.', '>'),
+                    props: {defaultValue: []}
+                },
+            ],
+        });
+    }
+
+    return {
+
+        type: 'radio',
+        title: '数据来源',
+        field: '_optionType',
+        // field: 'formCreateDataSourceType',
+        value: flag !== false ? 2 : 0,
+        
+        options,
+        props: {
+            optionType: 'button',
+            size: 'small'
+        },
+        control
+    };
+}
 export function makeEventRule(events = []) {
     return {
         type: 'object',

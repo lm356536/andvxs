@@ -37,6 +37,11 @@ import extraRadio from './extra/extraRadio'
 import extraCheckbox from './extra/extraCheckbox'
 import extraUploadFile from './extra/extraUploadFile';
 import extraUploadImg from './extra/extraUploadImg';
+import extraMutipleSelect from './extra/extraMutipleSelect';
+import extraSelect from './extra/extraSelect';
+import extraRate from './extra/extraRate'
+import extraDatePicker from './extra/extraDatePicker'
+
 import userNameInput from './user/userNameInput'
 import idCardInput from './user/idCardInput';
 import ageInput from './user/ageInput';
@@ -54,6 +59,10 @@ const ruleList = {
     [extraInput.name]: extraInput,
     [extraUploadFile.name]: extraUploadFile,
     [extraUploadImg.name]:extraUploadImg, 
+    [extraMutipleSelect.name]:extraMutipleSelect,
+    [extraDatePicker.name]: extraDatePicker,
+    [extraSelect.name]: extraSelect,
+    [extraRate.name]: extraRate,
     [userNameInput.name]: userNameInput,
     [idCardInput.name]: idCardInput,
     [ageInput.name]: ageInput,
