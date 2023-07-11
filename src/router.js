@@ -21,62 +21,21 @@ const route = createRouter({
                         {
                             path: "",
                             meta: { title: '首页' },
-                            component: () => import("./views/home.vue")
+                            component: () => import('./views/form/fcDesigner.vue')
                         }
                     ]
                 },
-                {
-                    path: 'table',
-                    component: Layout,
-                    children: [{
-                        path: 'header',
-                        meta: { title: '表格自定义头部', },
-                        component: () => import('./views/table/header.vue')
-                    }, {
-                        path: 'form',
-                        meta: { title: '表格编辑', },
-                        component: () => import('./views/table/form.vue')
-                    }]
-                },
+             
                 {
                     path: 'form',
                     component: Layout,
-                    children: [{
-                        path: 'index',
-                        meta: { title: '表单', },
-                        component: () => import('./views/form/index.vue')
-                    }, {
-                        path: 'cascader',
-                        meta: { title: '级联选择', },
-                        component: () => import('./views/form/cascader.vue')
-                    }, {
-                        path: 'input-custom-result',
-                        meta: { title: '自定义结果输入框', },
-                        component: () => import('./views/form/inputCustomResult.vue')
-                    }, {
+                    children: [ {
                         path: 'fc-designer',
                         meta: { title: '动态表单编辑', },
                         component: () => import('./views/form/fcDesigner.vue')
                     }]
                 },
-                {
-                    path: 'modal',
-                    component: Layout,
-                    children: [{
-                        path: 'index',
-                        meta: { title: 'Modal 测试', },
-                        component: () => import('./views/modal/index.vue')
-                    }]
-                },
-                {
-                    path: 'tree',
-                    component: Layout,
-                    children: [{
-                        path: 'index',
-                        meta: { title: 'tree 测试', },
-                        component: () => import('./views/tree/index.vue')
-                    }]
-                },
+              
                 {
                     path: '404',
                     meta: { authentication: false, title: '404' },
