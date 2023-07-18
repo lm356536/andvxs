@@ -1,5 +1,5 @@
 import uniqueId from '@form-create/utils/lib/unique';
-
+import { makeRequiredRule } from '../../../utils/index';
 const label = '多行文本';
 const name = 'extraArea';
 
@@ -17,6 +17,7 @@ export default {
     },
     props() {
         return [
+            makeRequiredRule(),
             { type: 'inputNumber', field: 'maxlength', title: '文本长度' },
             {
                 type: 'select',

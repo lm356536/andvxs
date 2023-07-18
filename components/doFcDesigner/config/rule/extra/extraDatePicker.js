@@ -1,5 +1,5 @@
 import uniqueId from '@form-create/utils/lib/unique';
-
+import { makeRequiredRule } from '../../../utils/index';
 const label = '日期选择器';
 const name = 'extraDatePicker';
 
@@ -20,6 +20,7 @@ export default {
     },
     props() {
         return [
+            makeRequiredRule(),
             { type: 'input', field: 'placeholder', title: '输入框提示文字' },
             { type: 'switch', field: 'allowClear', title: '是否显示清除按钮', value: true },
             { type: 'switch', field: 'autofocus', title: '自动获取焦点', value: false },

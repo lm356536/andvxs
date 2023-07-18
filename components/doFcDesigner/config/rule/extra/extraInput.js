@@ -1,5 +1,5 @@
 import uniqueId from '@form-create/utils/lib/unique';
-
+import { makeRequiredRule } from '../../../utils/index';
 const label = '单行文本';
 const name = 'extraInput';
 
@@ -17,6 +17,7 @@ export default {
     },
     props() {
         return [
+            makeRequiredRule(),
             { type: 'inputNumber', field: 'maxlength', title: '文本长度' },
             {
                 type: 'select',
@@ -24,12 +25,6 @@ export default {
                 title: '文本类型',
                 value: 'text',
             },
-            {
-              type: 'radio', field: 'required', title: '是否必填',  value: '0', options: [
-                    {label: '是', value: '1'},
-                    {label: '否', value: '0'}
-                ]
-            }
         ];
     }
 };

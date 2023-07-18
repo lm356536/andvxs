@@ -1,5 +1,5 @@
 import uniqueId from '@form-create/utils/lib/unique';
-import { makeOptionsRule } from '../../../utils/index';
+import { makeOptionsRule, makeRequiredRule } from '../../../utils/index';
 
 const label = '单项下拉';
 const name = 'extraSelect';
@@ -24,6 +24,7 @@ export default {
     },
     props() {
         return [
+            makeRequiredRule(),
             makeOptionsRule('options'),
             { type: 'input', field: 'placeholder', title: '占位符' },
             { type: 'switch', field: 'allowClear', title: '支持清除' },

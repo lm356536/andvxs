@@ -1,5 +1,5 @@
 import uniqueId from '@form-create/utils/lib/unique';
-
+import { makeRequiredRule } from '../../../utils/index';
 const label = '文件上传';
 const name = 'extraUploadFile';
 // 还未处理
@@ -24,6 +24,7 @@ export default {
     },
     props() {
         return [
+            makeRequiredRule(),
             {
                 type: 'select',
                 field: 'uploadType',

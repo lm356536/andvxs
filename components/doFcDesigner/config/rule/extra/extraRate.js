@@ -1,5 +1,5 @@
 import uniqueId from '@form-create/utils/lib/unique';
-
+import { makeRequiredRule } from '../../../utils/index';
 const label = '打分评价';
 const name = 'extraRate';
 
@@ -18,6 +18,7 @@ export default {
     props() {
         // clearable
         return [
+            makeRequiredRule(),
             { type: 'switch', field: 'allowClear', title: '是否允许再次点击后清除', value: true },
             { type: 'switch', field: 'allowHalf', title: '是否允许半选' },
             { type: 'switch', field: 'autofocus', title: '自动获取焦点' },

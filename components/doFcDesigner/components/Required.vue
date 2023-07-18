@@ -1,7 +1,7 @@
 <template>
-  <div class="_fc-required">
-    <a-switch v-model:required="required"></a-switch>
-    <a-input v-model="requiredMsg" v-if="required" placeholder="请输入提示语"></a-input>
+  <div class="_fc-checked">
+    <a-switch v-model:checked="checked"></a-switch>
+    <a-input v-model:value="checkedMsg" v-show="checked" placeholder="请输入提示语"></a-input>
   </div>
 </template>
 
@@ -15,32 +15,32 @@ export default defineComponent({
     modelValue: {},
   },
   watch: {
-    required() {
+    checked(newVal, oldVal) {
       this.update();
     },
-    requiredMsg() {
+    checkedMsg(newVal, oldVal) {
       this.update();
     },
     modelValue(n) {
       const flag = is.String(n);
-      this.required = n === undefined ? false : flag ? true : !!n;
-      this.requiredMsg = flag ? n : '';
+      this.checked = n === undefined ? false : flag ? true : !!n;
+      this.checkedMsg = flag ? n : '该字段不能为空！';
     },
   },
   data() {
     const flag = is.String(this.modelValue);
     return {
-      required: this.modelValue === undefined ? false : flag ? true : !!this.modelValue,
-      requiredMsg: flag ? this.modelValue : '',
+      checked: this.modelValue === undefined ? false : flag ? true : !!this.modelValue,
+      checkedMsg: flag ? this.modelValue : '该字段不能为空！',
     };
   },
   methods: {
     update() {
       let val;
-      if (this.required === false) {
+      if (this.checked === false) {
         val = false;
       } else {
-        val = this.requiredMsg;
+        val = this.checkedMsg;
       }
       this.$emit('update:modelValue', val);
     },
@@ -49,16 +49,16 @@ export default defineComponent({
 </script>
 
 <style>
-._fc-required {
+._fc-checked {
   display: flex;
   align-items: center;
 }
 
-._fc-required .el-input {
+._fc-checked .el-input {
   margin-left: 15px;
 }
 
-._fc-required .el-switch {
+._fc-checked .el-switch {
   height: 28px;
 }
 </style>

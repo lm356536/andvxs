@@ -1,5 +1,5 @@
 import uniqueId from '@form-create/utils/lib/unique';
-import { makeOptionsRule } from '../../../utils/index';
+import { makeOptionsRule, makeRequiredRule } from '../../../utils/index';
 
 const label = '多项选择';
 const name = 'extraCheckbox';
@@ -21,6 +21,7 @@ export default {
     },
     props() {
         return [
+            makeRequiredRule(),
             makeOptionsRule('options'),
             { type: 'switch', field: 'disabled', title: '是否禁用' },
         ];

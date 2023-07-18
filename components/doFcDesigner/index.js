@@ -7,6 +7,7 @@ import Validate from './components/Validate.vue';
 import DragBox from './components/DragBox.vue';
 import formCreate from '@form-create/ant-design-vue';
 // import FcEditor from '@form-create/component-wangeditor';
+import Required from './components/Required.vue';
 import './style/index.css';
 import draggable from 'vuedraggable/src/vuedraggable';
 import unique from '@form-create/utils/lib/unique';
@@ -14,15 +15,15 @@ import GroupTable from './components/GroupTable.vue';
 import TableOptions from './components/TableOptions.vue';
 formCreate.component('TableOptions', TableOptions)
 formCreate.component('draggable', draggable);
-formCreate.component(DragTool.name, DragTool);
-formCreate.component(DragBox.name, DragBox);
-formCreate.component(Validate.name, Validate);
-formCreate.component(InputCustomResult.name, InputCustomResult);
-formCreate.component(Fetch.name, Fetch);
-formCreate.component(Struct.name, Struct);
+formCreate.component('DragTool', DragTool);
+formCreate.component('DragBox', DragBox);
+formCreate.component('Validate', Validate);
+formCreate.component('InputCustomResult', InputCustomResult);
+formCreate.component('Fetch', Fetch);
+formCreate.component('Struct', Struct);
 // formCreate.component('FcEditor', FcEditor);
-formCreate.component(GroupTable.name, GroupTable);
-
+formCreate.component('GroupTable', GroupTable);
+formCreate.component('Required', Required);
 formCreate.register('_fc', {
     init(fc, rule) {
         rule.id = unique();

@@ -14,6 +14,7 @@ export default {
     },
     props() {
         return [
+     
             {
                 type: 'input',
                 field: 'formCreateChild',

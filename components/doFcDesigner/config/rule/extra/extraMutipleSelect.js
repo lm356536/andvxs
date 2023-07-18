@@ -1,5 +1,5 @@
 import uniqueId from '@form-create/utils/lib/unique';
-import { makeOptionsRule } from '../../../utils/index';
+import { makeOptionsRule, makeRequiredRule} from '../../../utils/index';
 
 const label = '多项下拉';
 const name = 'extraMutipleSelect';
@@ -27,6 +27,7 @@ export default {
     },
     props() {
         return [
+            makeRequiredRule(),
             makeOptionsRule('options'),
             { type: 'input', field: 'placeholder', title: '占位符' },
             { type: 'switch', field: 'allowClear', title: '支持清除' },
@@ -39,35 +40,6 @@ export default {
             { type: 'switch', field: 'filterOption', title: '是否根据输入项进行筛选', value: true },
             { type: 'inputNumber', field: 'maxTagCount', title: '最多显示多少个 tag' },
             { type: 'inputNumber', field: 'maxTagTextLength', title: '最大显示的 tag 文本长度' },
-            // {
-            //     type: 'select',
-            //     field: 'mode',
-            //     title: '设置 Select 的模式为多选或标签',
-            //     props: {
-            //         allowClear: true
-            //     },
-            //     options: [
-            //         { label: 'multiple', value: 'multiple' },
-            //         { label: 'tags', value: 'tags' },
-            //         { label: 'combobox', value: 'combobox' },
-            //     ]
-            // },
-            // { type: 'input', field: 'notFoundContent', title: '当下拉列表为空时显示的内容', value: 'Not Found' },
-            // { type: 'input', field: 'optionFilterProp', title: '搜索时过滤对应的 option 属性', info: '不支持 children', value: 'value' },
-            // { type: 'input', field: 'optionLabelProp', title: '回填到选择框的 Option 的属性值', info: '默认是 Option 的子元素。比如在子元素需要高亮效果时，此值可以设为 value', value: 'label' },
-            // { type: 'switch', field: 'showSearch', title: '使单选模式可搜索' },
-            // { type: 'switch', field: 'showArrow', title: '是否显示下拉小箭头', value: true },
-            // {
-            //     type: 'select',
-            //     field: 'size',
-            //     title: '尺寸',
-            //     value: 'default',
-            //     options: [
-            //         { label: 'large', value: 'large' },
-            //         { label: 'small', value: 'small' },
-            //         { label: 'default', value: 'default' },
-            //     ]
-            // },
         ];
     }
 };
