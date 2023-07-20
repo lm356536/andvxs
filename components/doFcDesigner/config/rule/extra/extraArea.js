@@ -25,12 +25,6 @@ export default {
                 title: '文本类型',
                 value: 'text',
             },
-            {
-              type: 'radio', field: 'required', title: '是否必填',  value: '0', options: [
-                    {label: '是', value: '1'},
-                    {label: '否', value: '0'}
-                ]
-            }
         ];
     }
 };
