@@ -19,7 +19,7 @@ export default {
                   "trigger": "change",
                   "mode": "pattern",
                   "message": "请输入正确的手机号码",
-                  "pattern": "^(?:(?:\+|00)86)?1[3-9]\d{9}$",
+                  "pattern": "^(?:(?:\\+|00)86)?1[3-9]\\d{9}$",
                   "type": "string"
                 }
               ],
